@@ -16,5 +16,5 @@ useDB = mycursor.execute(
     FROM 
         INFORMATION_SCHEMA.COLUMNS
     WHERE
-        TABLE_NAME = 'books' AND TABLE_SCHEMA = 'alx_book_store';"
+        TABLE_NAME = 'Books' AND TABLE_SCHEMA = 'alx_book_store';"
 )

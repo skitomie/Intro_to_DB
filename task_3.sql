@@ -5,5 +5,8 @@ import mysql.connector myDB = mysql.connector.connect(
     database = "alx_book_store"
 );
 mycursor = myDB.cursor();
-myTables = mycursor.execute("SHOW TABLES;");
+myTables = mycursor.execute(
+    "USE DATABASE alx_book_store";
+"SHOW TABLES;"
+);
 for tables in myTables: print(tables)

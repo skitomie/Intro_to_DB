@@ -33,16 +33,24 @@ myDB = mysql.connector.connect(
     password = "Ola@dapo1055",
     database = "alx_book_store"
 );
-mycursor = myDB.cursor();
-useDB = mycursor.execute("SELECT
-        COLUMN_NAME, 
-        COLUMN_TYPE, 
-        IS_NULLABLE, 
-        COLUMN_DEFAULT, 
-        COLUMN_KEY, 
-        EXTRA 
 
-        FROM 
-        INFORMATION_SCHEMA.COLUMNS
-        WHERE 
-        TABLE_NAME = 'Books' AND TABLE_SCHEMA = 'alx_book_store';")
+mycursor = myDB.cursor();
+columnInfo = """
+                SELECT
+                COLUMN_NAME, 
+                COLUMN_TYPE, 
+                IS_NULLABLE, 
+                COLUMN_DEFAULT, 
+                COLUMN_KEY, 
+                EXTRA 
+            FROM 
+                 INFORMATION_SCHEMA.COLUMNS
+            WHERE 
+                 TABLE_NAME = 'Books' AND TABLE_SCHEMA = 'alx_book_store';
+                 
+            """
+
+displayinfo = mycursor.execute(columnInfo);
+
+for rows in displayinfo:
+    print(rows)

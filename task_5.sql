@@ -7,7 +7,7 @@ import mysql.connector myDB = mysql.connector.connect(
 mycursor = myDB.cursor();
 useDB = mycursor.execute(
     """
-    INSERT INTO Customers(customerid, customer_name, email, address)
+    INSERT INTO Customer(customerid, customer_name, email, address)
     VALUES(1, " Cole Baidoo ", " cbaidoo @sandtech.com ", " 123 Happiness Ave ")
     
     """

@@ -34,8 +34,9 @@ myDB = mysql.connector.connect(
     database = "alx_book_store"
 );
 mycursor = myDB.cursor();
-useDB = mycursor.execute(
-    "SELECT * FROM INFORMATION_SCHEMA 
-    WHERE
-    TABLE_NAME = books AND TABLE_SCHEMA = alx_book_store;"
+useDB = mycursor.execute
+(
+    "SELECT * 
+    FROM INFORMATION_SCHEMA.COLUMNS 
+    WHERE TABLE_NAME = books AND TABLE_SCHEMA = alx_book_store;"
 );

@@ -5,10 +5,10 @@ import mysql.connector myDB = mysql.connector.connect(
     database = "alx_book_store"
 );
 mycursor = myDB.cursor();
-useDB = mycursor.execute(
-    """
-    INSERT INTO Customer(customerid, customer_name, email, address)
-    VALUES(1, " Cole Baidoo ", " cbaidoo @sandtech.com ", " 123 Happiness Ave ")
-    
-    """
-)
+sql = "INSERT INTO Customer(customerid, customer_name, email, address) VALUES (%s, %s, %s, %s)";
+val = (
+    1,
+    " Cole Baidoo ",
+    " cbaidoo @sandtech.com ",
+    " 123 Happiness Ave "
+) mycursor.execute(sql, val) myDB.commit()
